@@ -24,6 +24,10 @@ code {
   align-items: center;
 }
 
+.Main .text-center {
+  text-align: center;
+}
+
 .Main .main-icon {
   padding: 2rem 4rem;
   font-size: 64px;
@@ -32,9 +36,15 @@ code {
   border-radius: 20px;
 }
 
+.Main .main-icon img {
+  width: 150px;
+}
+
 .Main .main-btn {
   border: 1px solid black;
   padding: 0.5rem 2rem;
+  cursor: pointer;
+  user-select: none;
 }
 
 .cards-list {

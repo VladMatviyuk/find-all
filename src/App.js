@@ -16,6 +16,22 @@ const App = () => {
     { id: 10, image: "koko.jpg", title: "Item 10", status: false },
   ]);
 
+  const [count, setCount] = React.useState(0);
+  const [win, setWin] = React.useState(false);
+
+  function checkWin(items) {
+    let winCount = 0;
+    // eslint-disable-next-line
+    items.map((i) => {
+      if (i.status) {
+        winCount += 1;
+      }
+    });
+    if (winCount === 10) {
+      setWin(true);
+    }
+  }
+
   function testYourLuck() {
     let randomNumber = Math.floor(Math.random() * 10);
 
@@ -26,12 +42,13 @@ const App = () => {
     };
 
     setItem(newArray);
-    console.log(randomNumber);
+    checkWin(newArray);
+    setCount(count + 1);
   }
 
   return (
     <div className="App">
-      <Main testClick={testYourLuck} />
+      <Main testClick={testYourLuck} count={count} win={win} />
       <CardsList items={items} />
     </div>
   );
