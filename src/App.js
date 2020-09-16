@@ -1,6 +1,9 @@
 import React from "react";
 import Main from "./components/Main";
 import CardsList from "./components/CardsList";
+import Modal from "./components/Modal/Modal";
+
+const { regulations, winInfo } = require("./data/templatesModal.js");
 
 const App = () => {
   const [items, setItem] = React.useState([
@@ -18,8 +21,14 @@ const App = () => {
 
   const [count, setCount] = React.useState(0);
   const [win, setWin] = React.useState(false);
+  const [modal, setModal] = React.useState(false);
 
-  function checkWin(items) {
+  React.useEffect(() => {
+    modalTarget();
+    // eslint-disable-next-line
+  }, []);
+
+  const checkWin = (items) => {
     let winCount = 0;
     // eslint-disable-next-line
     items.map((i) => {
@@ -29,10 +38,11 @@ const App = () => {
     });
     if (winCount === 10) {
       setWin(true);
+      modalTarget();
     }
-  }
+  };
 
-  function testYourLuck() {
+  const testYourLuck = () => {
     let randomNumber = Math.floor(Math.random() * 10);
 
     let newArray = [...items];
@@ -44,11 +54,38 @@ const App = () => {
     setItem(newArray);
     checkWin(newArray);
     setCount(count + 1);
-  }
+  };
+
+  const newGame = () => {
+    // eslint-disable-next-line
+    items.map((i) => {
+      i.status = false;
+    });
+    setCount(0);
+    setWin(false);
+  };
+
+  const modalTarget = () => {
+    setModal(!modal);
+  };
+
+  // const wintarget = () => {
+  //   setCount(0);
+  //   setWin(true);
+  //   modalTarget();
+  // };
 
   return (
     <div className="App">
-      <Main testClick={testYourLuck} count={count} win={win} />
+      {modal && (
+        <Modal info={win ? winInfo : regulations} modalTarget={modalTarget} />
+      )}
+      <Main
+        testClick={testYourLuck}
+        count={count}
+        win={win}
+        newGame={newGame}
+      />
       <CardsList items={items} />
     </div>
   );

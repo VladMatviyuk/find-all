@@ -14,11 +14,11 @@ code {
 
 .App {
   width: 600px;
-  margin: 2.5em auto;
+  margin: 1.5em auto;
 }
 
 .Main {
-  margin: 2.5rem auto;
+  margin: 1.5rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
