@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'HotlineMiaimiFont';
+    src: local('HotlineMiaimiFont'), url(../fonts/Shoguns\ Clan.ttf) format('truetype');
+  }
+
+
+.count {
+    margin-top: 45px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 56px;
+    font-family: 'HotlineMiaimiFont';
+    color: #5f0049;
+}

@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'HotlineMiaimiFont';
+    src: local('HotlineMiaimiFont'), url(../fonts/Shoguns\ Clan.ttf) format('truetype');
+  }
+
+
+
+  .card span {
+    font-family: 'HotlineMiaimiFont';
+    color: #5f0049;
+  }

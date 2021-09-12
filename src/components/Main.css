@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'HotlineMiaimiFont';
+    src: local('HotlineMiaimiFont'), url(../fonts/Shoguns\ Clan.ttf) format('truetype');
+  }
+
+.Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Main .text-center {
+    text-align: center;
+    font-family: 'HotlineMiaimiFont';
+    color: #5f0049;
+    text-align: center;
+    letter-spacing: 10px;
+    letter-spacing: 5px;
+    font-size: 54px;
+    margin-bottom: 45px;
+  }
+  
+  .Main .main-icon {
+    padding: 2rem 4rem;
+    font-size: 64px;
+    /* border: 1px solid black; */
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    width: 35%;
+    height: 120px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Main .main-icon img {
+    width: 150px;
+  }
+
+  
+  .Main .main-btn {
+    border: 1px solid #5f0049;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80px;
+    border-radius: 25px;
+    /* background: #37a8d4; */
+    font-family: 'HotlineMiaimiFont';
+    font-size: 45px;
+    color: #5f0049;
+  }
